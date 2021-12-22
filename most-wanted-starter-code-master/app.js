@@ -102,6 +102,20 @@ function searchByEyeColor(people){
 
 //TODO: add other trait filter functions here.
 
+function searchByWeight(people){
+  let potentialWeight = promptFor("What is the person's weight?", autoValid);
+
+  let foundWeight = people.filter(function(potentialMatch){
+    if(potentialMatch.potentialWeight === weight){
+      return true
+    }
+    else{
+      return false;
+    }
+  })
+  return foundPerson
+}
+
 
 
 //#endregion
