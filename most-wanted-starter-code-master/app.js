@@ -158,6 +158,21 @@ function searchByGender(people){
   return foundPerson
 }
 
+function searchByDateOfBirth(people){
+  let potentialDateOfBirth = promptFor("What is the person's date of birth?", autoValid);
+
+  let foundDateOfBirth = people.filter(function(potentialMatch){
+    if(potentialMatch.potentialDateOfBirth === dob){
+      return true
+    }
+    else{
+      return false;
+    }
+  })
+  return foundPerson
+}
+
+
 
 
 //#endregion
