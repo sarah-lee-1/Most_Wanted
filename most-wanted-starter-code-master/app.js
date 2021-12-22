@@ -239,8 +239,8 @@ function displayPerson(person){
   personInfo += "Weight: " + person.weight + "\n";
   personInfo += "Eye Color: " + person.eyeColor + "\n";
   personInfo += "Occupation: " + person.occupation + "\n";
-  personInfo += "Parents: " + person.parents[0] + "\n";
-  personInfo += "Current Spouse: " + person.currentSpouse[0] + "\n"; 
+  personInfo += "Parents: " + person.parents + "\n";
+  personInfo += "Current Spouse: " + person.currentSpouse + "\n"; 
   alert(personInfo);
 }
 
