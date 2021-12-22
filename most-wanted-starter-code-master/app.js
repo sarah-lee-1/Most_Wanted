@@ -40,6 +40,7 @@ function mainMenu(person, people){
 
   switch(displayOption){
     case "info":
+      displayPerson(person);
     // TODO: get person's info
     break;
     case "family":
@@ -83,6 +84,10 @@ function searchByName(people){
   // TODO: find the person single person object using the name they entered.
   
   return foundPerson;
+}
+
+function searchByTrait(people){
+
 }
 
 //unfinished function to search through an array of people to find matching eye colors. Use searchByName as reference.
