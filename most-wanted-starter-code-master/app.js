@@ -87,7 +87,7 @@ function searchByName(people){
 
 //unfinished function to search through an array of people to find matching eye colors. Use searchByName as reference.
 function searchByEyeColor(people){
-  let potentialEyeColor = promptFor("What is the persoon's eye color?", autoValid);
+  let potentialEyeColor = promptFor("What is the person's eye color?", autoValid);
 
   let foundColor = people.filter(function(potentialMatch){
     if(potentialMatch.potentialEyeColor === eyeColor){
@@ -107,6 +107,20 @@ function searchByWeight(people){
 
   let foundWeight = people.filter(function(potentialMatch){
     if(potentialMatch.potentialWeight === weight){
+      return true
+    }
+    else{
+      return false;
+    }
+  })
+  return foundPerson
+}
+
+function searchByHeight(people){
+  let potentialHeight = promptFor("What is the person's height?", autoValid);
+
+  let foundHeight = people.filter(function(potentialMatch){
+    if(potentialMatch.potentialHeight === height){
       return true
     }
     else{
