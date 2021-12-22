@@ -86,37 +86,36 @@ function searchByName(people){
   return foundPerson;
 }
 
-// function searchByTrait(people){
-//   searchByTrait = promptFor("Enter what trait you would like to search: 'gender', 'date of birth', 'height', 'weight', 'eye color', 'occupation', 'parents', 'current spouse'.\n Type the option you want or 'quit'", chars).toLocaleLowerCase();
-//   switch(searchByTrait){
-//   case "eyecolor":
-//   case "eye color":
-//   case "eye":
-//   case "color":
-//   searchTrait = "eyeColor"
-//   traitValue = promptFor("Eye color: ", chars);
-//   break;
-//   case "height":
-//   traitValue = promptFor("Height: ", chars);
-//   break;
-//   case "weight":
-//   traitValue = promptFor("Weight: ", chars);
-//   break;
-//   case "occupation":
-//   case "job":
-//   traitValue = promptFor("Job or Occupation: ", chars);
-//   break;
-//   case "gender":
-//   searchTrait = "gender"
-//   traitValue = promptFor("Gender: ", genderOfPerson);
-//   break;
-//   case "quit":
-//     return;
-//   default:
-//     return searchByTrait(people);
-//   }
-// }
-
+function searchByTrait(people){
+  searchByTrait = promptFor("Enter what trait you would like to search: 'gender', 'date of birth', 'height', 'weight', 'eye color', 'occupation', 'parents', 'current spouse'.\n Type the option you want or 'quit'", chars).toLocaleLowerCase();
+  switch(searchByTrait){
+  case "eyecolor":
+  case "eye color":
+  case "eye":
+  case "color":
+  searchTrait = "eyeColor"
+  traitValue = promptFor("Eye color: ", chars);
+  break;
+  case "height":
+  traitValue = promptFor("Height: ", chars);
+  break;
+  case "weight":
+  traitValue = promptFor("Weight: ", chars);
+  break;
+  case "occupation":
+  case "job":
+  traitValue = promptFor("Job or Occupation: ", chars);
+  break;
+  case "gender":
+  searchTrait = "gender"
+  traitValue = promptFor("Gender: ", genderOfPerson);
+  break;
+  case "quit":
+    return;
+  default:
+    return searchByTrait(people);
+  }
+}
 
 
 
