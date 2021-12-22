@@ -93,22 +93,21 @@ function searchByTrait(people){
   case "eye color":
   case "eye":
   case "color":
-  searchTrait = "eyeColor"
-  traitValue = promptFor("Eye color: ");
+  traitValue = promptFor("Eye color: ", autoValid);
   break;
   case "height":
-  traitValue = promptFor("Height: ");
+  traitValue = promptFor("Height: ", autoValid);
   break;
   case "weight":
-  traitValue = promptFor("Weight: ");
+  traitValue = promptFor("Weight: ", autoValid);
   break;
   case "occupation":
   case "job":
-  traitValue = promptFor("Job or Occupation: ");
+  traitValue = promptFor("Job or Occupation: ", autoValid);
   break;
   case "gender":
   searchTrait = "gender"
-  traitValue = promptFor("Gender: ", genderOfPerson);
+  traitValue = promptFor("Gender: ", genderOfPerson, autoValid);
   break;
   case "quit":
     return;
@@ -235,8 +234,8 @@ function displayPerson(person){
   personInfo += "Weight: " + person.weight + "\n";
   personInfo += "Eye Color: " + person.eyeColor + "\n";
   personInfo += "Occupation: " + person.occupation + "\n";
-  personInfo += "Parents: " + person.parents + "\n";
-  personInfo += "Current Spouse: " + person.currentSpouse + "\n"; 
+  personInfo += "Parents: " + person.parents[0,1] + "\n";
+  personInfo += "Current Spouse: " + person.currentSpouse[0] + "\n"; 
   alert(personInfo);
 }
 
@@ -257,7 +256,7 @@ function promptFor(question, valid){
   let isValid;
   do{
     var response = prompt(question).trim();
-    isValid = valid(response);
+    isValid = autoValid(response);
   } while(response === ""  ||  isValid === false)
   return response;
 }
