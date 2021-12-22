@@ -94,24 +94,24 @@ function searchByTrait(people){
   case "eye color":
   case "eye":
   case "color":
-  traitValue = promptFor("Eye color: ", searchByEyeColor, autoValid);
+  traitValue = promptFor("Eye color: ", searchByEyeColor(), autoValid);
   return traitValue;
   break;
   case "height":
-  traitValue = promptFor("Height: ", searchByHeight, autoValid);
+  traitValue = promptFor("Height: ", searchByHeight(), autoValid);
   return traitValue;
   break;
   case "weight":
-  traitValue = promptFor("Weight: ", searchByWeight, autoValid);
+  traitValue = promptFor("Weight: ", searchByWeight(), autoValid);
   return traitValue;
   break;
   case "occupation":
   case "job":
-  traitValue = promptFor("Job or Occupation: ", searchByOccupation, autoValid);
+  traitValue = promptFor("Job or Occupation: ", searchByOccupation(), autoValid);
   return traitValue;
   break;
   case "gender":
-  traitValue = promptFor("Gender: ", genderOfPerson, searchByGender, autoValid);
+  traitValue = promptFor("Gender: ", searchByGender(), autoValid);
   return traitValue;
   break;
   case "quit":
@@ -125,8 +125,10 @@ function searchByTrait(people){
 
 //unfinished function to search through an array of people to find matching eye colors. Use searchByName as reference.
 function searchByEyeColor(people){
+  let potentialEyeColor
+  let potentialMatch
   let potentialEyeColor = promptFor("What is the person's eye color?", autoValid);
-
+  let foundColor
   let foundColor = people.filter(function(potentialMatch){
     if(potentialMatch.potentialEyeColor === eyeColor){
       return true
