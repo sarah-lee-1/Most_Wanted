@@ -40,7 +40,7 @@ function mainMenu(person, people){
 
   switch(displayOption){
     case "info":
-      displayPerson(person);
+      displayPerson(person[0]);
     // TODO: get person's info
     break;
     case "family":
@@ -87,24 +87,24 @@ function searchByName(people){
 }
 
 function searchByTrait(people){
-  searchByTrait = promptFor("Enter what trait you would like to search: 'gender', 'date of birth', 'height', 'weight', 'eye color', 'occupation', 'parents', 'current spouse'.\n Type the option you want or 'quit'", chars).toLocaleLowerCase();
+  searchByTrait = promptFor("Enter what trait you would like to search: 'gender', 'date of birth', 'height', 'weight', 'eye color', 'occupation', 'parents', 'current spouse'.\n Type the option you want or 'quit'").toLocaleLowerCase();
   switch(searchByTrait){
   case "eyecolor":
   case "eye color":
   case "eye":
   case "color":
   searchTrait = "eyeColor"
-  traitValue = promptFor("Eye color: ", chars);
+  traitValue = promptFor("Eye color: ");
   break;
   case "height":
-  traitValue = promptFor("Height: ", chars);
+  traitValue = promptFor("Height: ");
   break;
   case "weight":
-  traitValue = promptFor("Weight: ", chars);
+  traitValue = promptFor("Weight: ");
   break;
   case "occupation":
   case "job":
-  traitValue = promptFor("Job or Occupation: ", chars);
+  traitValue = promptFor("Job or Occupation: ");
   break;
   case "gender":
   searchTrait = "gender"
