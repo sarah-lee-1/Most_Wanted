@@ -82,8 +82,9 @@ function searchByName(people){
     }
   })
   // TODO: find the person single person object using the name they entered.
-  
-  return foundPerson;
+  foundPerson(id)
+
+  return foundPerson(firstName, lastName);
 }
 
 function searchByTrait(people){
