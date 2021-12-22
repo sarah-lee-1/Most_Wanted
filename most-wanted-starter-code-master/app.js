@@ -55,7 +55,7 @@ function mainMenu(person, people){
     case "quit":
     return; // stop execution
     default:
-    return mainMenu(person, people); // ask again
+    return mainMenu(person[0], people); // ask again
   }
 }
 
@@ -88,26 +88,31 @@ function searchByName(people){
 
 function searchByTrait(people){
   searchByTrait = promptFor("Enter what trait you would like to search: 'gender', 'date of birth', 'height', 'weight', 'eye color', 'occupation', 'parents', 'current spouse'.\n Type the option you want or 'quit'").toLocaleLowerCase();
+  let traitValue
   switch(searchByTrait){
   case "eyecolor":
   case "eye color":
   case "eye":
   case "color":
-  traitValue = promptFor("Eye color: ", autoValid);
+  traitValue = promptFor("Eye color: ", searchByEyeColor, autoValid);
+  return traitValue;
   break;
   case "height":
-  traitValue = promptFor("Height: ", autoValid);
+  traitValue = promptFor("Height: ", searchByHeight, autoValid);
+  return traitValue;
   break;
   case "weight":
-  traitValue = promptFor("Weight: ", autoValid);
+  traitValue = promptFor("Weight: ", searchByWeight, autoValid);
+  return traitValue;
   break;
   case "occupation":
   case "job":
-  traitValue = promptFor("Job or Occupation: ", autoValid);
+  traitValue = promptFor("Job or Occupation: ", searchByOccupation, autoValid);
+  return traitValue;
   break;
   case "gender":
-  searchTrait = "gender"
-  traitValue = promptFor("Gender: ", genderOfPerson, autoValid);
+  traitValue = promptFor("Gender: ", genderOfPerson, searchByGender, autoValid);
+  return traitValue;
   break;
   case "quit":
     return;
@@ -234,7 +239,7 @@ function displayPerson(person){
   personInfo += "Weight: " + person.weight + "\n";
   personInfo += "Eye Color: " + person.eyeColor + "\n";
   personInfo += "Occupation: " + person.occupation + "\n";
-  personInfo += "Parents: " + person.parents[0,1] + "\n";
+  personInfo += "Parents: " + person.parents[0] + "\n";
   personInfo += "Current Spouse: " + person.currentSpouse[0] + "\n"; 
   alert(personInfo);
 }
