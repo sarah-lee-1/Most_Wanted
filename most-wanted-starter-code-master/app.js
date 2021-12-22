@@ -144,6 +144,19 @@ function searchByOccupation(people){
   return foundPerson
 }
 
+function searchByGender(people){
+  let potentialGender = promptFor("What is the person's gender?", autoValid);
+
+  let foundGender = people.filter(function(potentialMatch){
+    if(potentialMatch.potentialGender === gender){
+      return true
+    }
+    else{
+      return false;
+    }
+  })
+  return foundPerson
+}
 
 
 
