@@ -87,7 +87,14 @@ function searchByName(people){
 }
 
 function searchByTrait(people){
-
+  searchByTrait = promptFor("Enter what trait you would like to search: 'gender', 'date of birth', 'height', 'weight', 'eye color', 'occupation', 'parents', 'current spouse'.\n Type the option you want or 'quit'", chars).toLocaleLowerCase();
+  switch(searchByTrait){
+    case "eyecolor":
+      case "eye color":
+        case "eye":
+          case "color":
+            searchTrait
+  }
 }
 
 //unfinished function to search through an array of people to find matching eye colors. Use searchByName as reference.
