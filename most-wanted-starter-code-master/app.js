@@ -74,7 +74,7 @@ function searchByName(people){
   let foundPerson = people.filter(function(potentialMatch){
     if(potentialMatch.firstName === firstName && potentialMatch.lastName === lastName){
         console.log(firstName, lastName);
-        alert(firstName, +" "+ lastName);
+        alert(firstName, + " ", + lastName);
       return true;
   }
     else{
