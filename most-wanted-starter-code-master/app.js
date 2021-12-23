@@ -93,27 +93,27 @@ function searchByTrait(people){
   case "eye color":
   case "eye":
   case "color":
-  let potentialMatches
-  potentialMatches = searchByEyeColor(people);
-  return potentialMatches;
+  let potentialEyeColor
+  potentialEyeColor = searchByEyeColor(people);
+  return potentialEyeColor;
   case "height":
-  let potentialMatches
-  potentialMatches = searchByHeight(people);
-  return potentialMatches;
+  let potentialHeight
+  potentialHeight = searchByHeight(people);
+  return potentialHeight;
   case "weight":
-  let potentialMatches
-  potentialMatches = searchByWeight(people);
-  return potentialMatches;
+  let potentialWeight
+  potentialWeight = searchByWeight(people);
+  return potentialWeight;
   case "occupation":
   case "job":
   case "profession":
-  let potentialMatches
-  potentialMatches = searchByOccupation(people);
-  return potentialMatches;
+  let potentialOccupation
+  potentialOccupation = searchByOccupation(people);
+  return potentialOccupation;
   case "gender":
-  let potentialMatches
-  potentialMatches = searchByGender(people);
-  return potentialMatches;
+  let potentialGender
+  potentialGender = searchByGender(people);
+  return potentialGender;
   case "quit":
     return;
   default:
