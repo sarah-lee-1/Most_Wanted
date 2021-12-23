@@ -88,7 +88,6 @@ function searchByName(people){
 
 function searchByTrait(people){
   searchByTrait = promptFor("Enter what trait you would like to search: 'gender', 'date of birth', 'height', 'weight', 'eye color', 'occupation', 'parents', 'current spouse'.\n Type the option you want or 'quit'").toLocaleLowerCase();
-  let traitValue
   switch(searchByTrait){
   case "eyecolor":
   case "eye color":
@@ -125,10 +124,8 @@ function searchByTrait(people){
 
 //unfinished function to search through an array of people to find matching eye colors. Use searchByName as reference.
 function searchByEyeColor(people){
-  
-  let potentialMatch
   let potentialEyeColor = promptFor("What is the person's eye color?", autoValid);
-  
+
   let foundColor = people.filter(function(potentialMatch){
     if(potentialMatch.potentialEyeColor === eyeColor){
       return true
