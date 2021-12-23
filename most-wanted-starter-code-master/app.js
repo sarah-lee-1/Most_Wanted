@@ -16,6 +16,7 @@ function app(people){
       break;
     case 'no':
       searchResults = searchByTrait(people);
+      displayPeople(searchResults)
       break;
       default:
     app(people); // restart app
