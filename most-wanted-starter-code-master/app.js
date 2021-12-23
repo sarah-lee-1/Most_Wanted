@@ -148,6 +148,7 @@ function searchByWeight(people){
     }
   })
   return foundPeople
+}
 
 function searchByHeight(people){
   let potentialHeight = promptFor("What is the person's height?", autoValid);
