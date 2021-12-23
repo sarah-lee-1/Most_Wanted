@@ -10,13 +10,16 @@
 function app(people){
   let searchType = promptFor("Do you know the name of the person you are looking for? Enter 'yes' or 'no'", yesNo).toLowerCase();
   let searchResults;
+  let displayResults;
+  let refinedSearchResults;
   switch(searchType){
     case 'yes':
       searchResults = searchByName(people);
       break;
     case 'no':
       searchResults = searchByTrait(people);
-      displayPeople(searchResults)
+      displayResults = displayPeople(searchResults);
+      refinedSearchResults = refinedSearch(displayResults);//return searchByTrait(people) need to check for 1 person in search results, if not 1 then loop and prompt
       break;
       default:
     app(people); // restart app
@@ -120,6 +123,17 @@ function searchByTrait(people){
   default:
     return searchByTrait(people);
   }
+}
+
+function refinedSearch(people){
+  if (people.length(1)){
+    break;
+else{
+  a = 1;
+}
+
+  }
+
 }
 
 
@@ -226,18 +240,8 @@ function displayPeople(people){
   alert(people.map(function(person){
     return person.firstName + " " + person.lastName;
   }).join("\n"));
-  let userIn = promptFor("Would you like to refine the search of these individuals? 'yes' or 'no'");
-  switch(userIn){
-    case 'yes':
-      searchByTrait(people);
-      break;
-    case 'no':
-      app(people);
-      break;
-      default:
-    app(people); // restart app
-      break;
-}}
+  return people;
+}
 
 
 function displayPerson(person){
@@ -302,3 +306,7 @@ function customValidation(input){
 }
 
 //#endregion
+
+
+
+//return searchByTrait(people)
