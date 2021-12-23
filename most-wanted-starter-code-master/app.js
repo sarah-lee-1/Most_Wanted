@@ -97,17 +97,21 @@ function searchByTrait(people){
   potentialMatches = searchByEyeColor(people);
   return potentialMatches;
   case "height":
+  let potentialMatches
   potentialMatches = searchByHeight(people);
   return potentialMatches;
   case "weight":
+  let potentialMatches
   potentialMatches = searchByWeight(people);
   return potentialMatches;
   case "occupation":
   case "job":
   case "profession":
+  let potentialMatches
   potentialMatches = searchByOccupation(people);
   return potentialMatches;
   case "gender":
+  let potentialMatches
   potentialMatches = searchByGender(people);
   return potentialMatches;
   case "quit":
