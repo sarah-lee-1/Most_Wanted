@@ -145,7 +145,7 @@ function searchByWeight(people){
   let potentialWeight = promptFor("What is the person's weight?", autoValid);
 
   let foundPeople = people.filter(function(potentialMatch){
-    if(potentialMatch.weight === potentialWeight){
+    if(potentialMatch.weight == potentialWeight){
       return true
     }
     else{
@@ -159,7 +159,7 @@ function searchByHeight(people){
   let potentialHeight = promptFor("What is the person's height?", autoValid);
 
   let foundPeople = people.filter(function(potentialMatch){
-    if(potentialMatch.height === potentialHeight){
+    if(potentialMatch.height == potentialHeight){
       return true
     }
     else{
