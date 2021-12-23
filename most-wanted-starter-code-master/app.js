@@ -36,7 +36,7 @@ function mainMenu(person, people){
     return app(people); // restart
   }
 
-  let displayOption = promptFor("Found" + person.firstName + " " + person.lastName + " " + "Do you want to know their 'info', 'family', or 'descendants'? Type the option you want or 'restart' or 'quit'", autoValid);
+  let displayOption = promptFor("Found" + person[0].firstName + " " + person[0].lastName + " " + "Do you want to know their 'info', 'family', or 'descendants'? Type the option you want or 'restart' or 'quit'", autoValid);
 
   switch(displayOption){
     case "info":
@@ -93,26 +93,26 @@ function searchByTrait(people){
   case "eye color":
   case "eye":
   case "color":
-    let traitValue
-  traitValue = promptFor("Eye color: ", searchByEyeColor(people), autoValid);
-  return traitValue;
+  let potentialMatches
+  potentialMatches = searchByEyeColor(people);
+  return potentialMatches;
   break;
   case "height":
-  traitValue = promptFor("Height: ", searchByHeight(), autoValid);
-  return traitValue;
+  potentialMatches = searchByHeight();
+  return potentialMatches;
   break;
   case "weight":
-  traitValue = promptFor("Weight: ", searchByWeight(), autoValid);
-  return traitValue;
+  potentialMatches = searchByWeight();
+  return potentialMatches;
   break;
   case "occupation":
   case "job":
-  traitValue = promptFor("Job or Occupation: ", searchByOccupation(), autoValid);
-  return traitValue;
+  potentialMatches = searchByOccupation();
+  return potentialMatches;
   break;
   case "gender":
-  traitValue = promptFor("Gender: ", searchByGender(), autoValid);
-  return traitValue;
+  potentialMatches = searchByGender();
+  return potentialMatches;
   break;
   case "quit":
     return;
