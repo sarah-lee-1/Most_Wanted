@@ -93,7 +93,8 @@ function searchByTrait(people){
   case "eye color":
   case "eye":
   case "color":
-  traitValue = promptFor("Eye color: ", searchByEyeColor(), autoValid);
+    let traitValue
+  traitValue = promptFor("Eye color: ", searchByEyeColor, autoValid);
   return traitValue;
   break;
   case "height":
