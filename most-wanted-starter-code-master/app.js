@@ -88,8 +88,8 @@ function searchByName(people){
 }
 
 function searchByTrait(people){
-  searchByTrait = promptFor("Enter what trait you would like to search: 'gender', 'date of birth', 'height', 'weight', 'eye color', 'occupation', 'parents', 'current spouse'.\n Type the option you want or 'quit'").toLocaleLowerCase();
-  switch(searchByTrait){
+  let userInput = promptFor("Enter what trait you would like to search: 'gender', 'date of birth', 'height', 'weight', 'eye color', 'occupation', 'parents', 'current spouse'.\n Type the option you want or 'quit'").toLocaleLowerCase();
+  switch(userInput){
   case "eyecolor":
   case "eye color":
   case "eye":
@@ -145,7 +145,7 @@ function searchByWeight(people){
   let potentialWeight = promptFor("What is the person's weight?", autoValid);
 
   let foundPeople = people.filter(function(potentialMatch){
-    if(potentialMatch.weight === potentialWeight){
+    if(potentialMatch.weight == potentialWeight){
       return true
     }
     else{
@@ -159,7 +159,7 @@ function searchByHeight(people){
   let potentialHeight = promptFor("What is the person's height?", autoValid);
 
   let foundPeople = people.filter(function(potentialMatch){
-    if(potentialMatch.height === potentialHeight){
+    if(potentialMatch.height == potentialHeight){
       return true
     }
     else{
@@ -226,7 +226,19 @@ function displayPeople(people){
   alert(people.map(function(person){
     return person.firstName + " " + person.lastName;
   }).join("\n"));
-}
+  let userIn = promptFor("Would you like to refine the search of these individuals? 'yes' or 'no'");
+  switch(userIn){
+    case 'yes':
+      searchByTrait(people);
+      break;
+    case 'no':
+      app(people);
+      break;
+      default:
+    app(people); // restart app
+      break;
+}}
+
 
 function displayPerson(person){
   // print all of the information about a person:
