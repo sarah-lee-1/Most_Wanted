@@ -94,7 +94,7 @@ function searchByTrait(people){
   case "eye":
   case "color":
     let traitValue
-  traitValue = promptFor("Eye color: ", searchByEyeColor, autoValid);
+  traitValue = promptFor("Eye color: ", searchByEyeColor(), autoValid);
   return traitValue;
   break;
   case "height":
@@ -127,7 +127,7 @@ function searchByTrait(people){
 function searchByEyeColor(people){
   let potentialEyeColor = promptFor("What is the person's eye color?", autoValid);
 
-  let foundColor = people.filter(function(potentialMatch){
+  let foundColor = people.filter(function(potentialEyeColor){
     if(potentialMatch.potentialEyeColor === eyeColor){
       return true
     }
