@@ -128,13 +128,11 @@ function searchByTrait(people){
 function refinedSearch(people){
   if (people.length(1)){
     break;
-else{
-  a = 1;
-}
+  }  else{
+      searchByTrait(people);
+}}
 
-  }
 
-}
 
 
 
