@@ -47,7 +47,6 @@ function mainMenu(person, people){
   switch(displayOption){
     case "info":
       displayPerson(person[0]);
-    // TODO: get person's info
     break;
     case "family":
       displayFamily(person[0]);
@@ -253,10 +252,43 @@ function displayPerson(person){
 
 function displayFamily(person){
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
 
 function displayDescendants(person){
-  
+
 }
 
 //#endregion
