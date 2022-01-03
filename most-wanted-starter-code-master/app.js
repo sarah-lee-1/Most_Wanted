@@ -18,8 +18,6 @@ function app(people){
       break;
     case 'no':
       if (people.length == 1) {
-      alert("We have found one individual");
-      displayResults = displayPeople(searchResults);
       } else {
         searchResults = searchByTrait(people);
         searchResults = displayPeople(searchResults);
