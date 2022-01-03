@@ -288,6 +288,22 @@ function displayFamily(person){
 }
 
 function displayDescendants(person){
+    // let Descendants = promptFor("What is the person's first name?", autoValid);
+    // let foundPerson = promptFor("What is the person's last name?", autoValid);
+    // let Descendant = 
+
+    let Descendants = person.filter(function(potentialDescendants){
+      if(potentialDescendants.parents === parents){
+          console.log(firstName, lastName);
+          alert(firstName + " " + lastName);
+        return true;
+    }
+      else{
+        return false;
+      }
+    })
+    
+    return Descendants;
 
 
 
@@ -313,7 +329,6 @@ function displayDescendants(person){
 
 
 
-  
 }
 
 //#endregion
