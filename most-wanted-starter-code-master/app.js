@@ -52,7 +52,7 @@ function mainMenu(person, people){
       displayFamily(person[0], people);
     break;
     case "descendants":
-      displayDescendants(person[0]);
+      displayDescendants(person[0], people);
     break;
     case "restart":
     app(people); // restart
@@ -262,7 +262,7 @@ function displayFamily(person, people){
   })
   let i;
   for (i = 0; i < familyInfo.length; i++){
-    if (person.parents === familyInfo.id){
+    if (person.parents.includes(familyInfo.id)){
       return true;
     }
     else{
