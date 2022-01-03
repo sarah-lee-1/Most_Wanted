@@ -49,7 +49,7 @@ function mainMenu(person, people){
       displayPerson(person[0]);
     break;
     case "family":
-      displayFamily(person[0]);
+      displayFamily(person[0], people);
     break;
     case "descendants":
       displayDescendants(person[0]);
@@ -250,11 +250,31 @@ function displayPerson(person){
   alert(personInfo);
 }
 
-function displayFamily(person){
+function displayFamily(person, people){
 
-
-
-
+  let familyInfo = people.filter(function(element){
+    if(person.lastName === element.lastName && person.firstName !== element.firstName){
+      return true;
+    }
+    else{
+      return false;
+    }
+  })
+  let i;
+  for (i = 0; i < familyInfo.length; i++){
+    if (person.parents === familyInfo.id){
+      return true;
+    }
+    else{
+      return false;
+    }
+  }
+  let personInfo = "First Name: " + person.firstName + "\n";
+  personInfo += "Last Name: " + person.lastName + "\n";
+  familyInfo += "Parents: " + person.parents + "\n";
+  familyInfo += "Current Spouse: " + person.currentSpouse + "\n";
+  familyInfo += "Siblings: " + person.siblings + "\n";
+  alert(personInfo, familyInfo)
 
 
 
