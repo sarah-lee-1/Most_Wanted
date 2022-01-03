@@ -17,10 +17,15 @@ function app(people){
       searchResults = searchByName(people);
       break;
     case 'no':
-      searchResults = searchByTrait(people);
+      if (people.length == 1) {
+      alert("We have found one individual");
       displayResults = displayPeople(searchResults);
-      refinedSearchResults = refinedSearch(displayResults);//return searchByTrait(people) need to check for 1 person in search results, if not 1 then loop and prompt
-      break;
+      } else {
+        searchResults = searchByTrait(people);
+        searchResults = displayPeople(searchResults);
+      // searchResults = refinedSearch(searchResults);//return searchByTrait(people) need to check for 1 person in search results, if not 1 then loop and prompt
+        return app(searchResults);
+      }
       default:
     app(people); // restart app
       break;
@@ -125,13 +130,13 @@ function searchByTrait(people){
   }
 }
 
-function refinedSearch(people){
-  if (people.length[1]){
-  return;
-  }  
-  else{
-      searchByTrait(people);
-}}
+// function refinedSearch(people){
+//   if (people.length == 1){
+//   return;
+//   }  
+//   else{
+//       searchByTrait(people);
+// }}
 
 
 
