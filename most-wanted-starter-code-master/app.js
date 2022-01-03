@@ -50,10 +50,10 @@ function mainMenu(person, people){
     // TODO: get person's info
     break;
     case "family":
-    // TODO: get person's family
+      displayFamily(person[0]);
     break;
     case "descendants":
-    // TODO: get person's descendants
+      displayDescendants(person[0]);
     break;
     case "restart":
     app(people); // restart
@@ -249,6 +249,14 @@ function displayPerson(person){
   personInfo += "Parents: " + person.parents + "\n";
   personInfo += "Current Spouse: " + person.currentSpouse + "\n"; 
   alert(personInfo);
+}
+
+function displayFamily(person){
+
+}
+
+function displayDescendants(person){
+  
 }
 
 //#endregion
