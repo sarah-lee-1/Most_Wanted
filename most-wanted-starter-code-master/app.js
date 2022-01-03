@@ -307,23 +307,24 @@ function displayFamily(person, people){
 
 }
 
-function displayDescendants(people){
+function displayDescendants(person, people){
  
     
     // let Descendants = 
 
-    let Descendants = people.filter(function(potentialDescendants){
-      if(potentialDescendants.parents == parents){
-          console.log(firstName, lastName);
-          alert(firstName + " " + lastName);
-        return true;
-    }
-      else{
-        return false;
-      }
+    let descendant = people.filter(function(potentialDescendant){
+     for (let i = 0; i < potentialDescendant.parents.length; i++) {
+       if (person.parents.includes(potentialDescendant.parents[i])){
+         return true;
+       }
+       else{
+         return false;
+       }
+     }
     })
     
-    return displayDescendants;
+
+    return descendant;
 
 
 
