@@ -11,7 +11,7 @@ function app(people){
   let searchType = promptFor("Do you know the name of the person you are looking for? Enter 'yes' or 'no'", yesNo).toLowerCase();
   let searchResults;
   let displayResults;
-  let refinedSearchResults;
+  
   switch(searchType){
     case 'yes':
       searchResults = searchByName(people);
@@ -23,7 +23,6 @@ function app(people){
       } else {
         searchResults = searchByTrait(people);
         searchResults = displayPeople(searchResults);
-      // searchResults = refinedSearch(searchResults);//return searchByTrait(people) need to check for 1 person in search results, if not 1 then loop and prompt
         return app(searchResults);
       }
       default:
@@ -129,17 +128,6 @@ function searchByTrait(people){
     return searchByTrait(people);
   }
 }
-
-// function refinedSearch(people){
-//   if (people.length == 1){
-//   return;
-//   }  
-//   else{
-//       searchByTrait(people);
-// }}
-
-
-
 
 
 //unfinished function to search through an array of people to find matching eye colors. Use searchByName as reference.
