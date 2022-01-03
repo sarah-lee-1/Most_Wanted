@@ -252,29 +252,31 @@ function displayPerson(person){
 
 function displayFamily(person, people){
 
-  let familyInfo = people.filter(function(element){
-    if(person.lastName === element.lastName && person.firstName !== element.firstName){
+  let parentInfo = people.filter(function(element){
+    if(person.parents.includes(element.id)){
       return true;
     }
     else{
       return false;
     }
   })
-  let i;
-  for (i = 0; i < familyInfo.length; i++){
-    if (person.parents.includes(familyInfo.id)){
+
+  let spouseInfo = people.filter(function(element){
+    if((person.currentSpouse != null) && person.currentSpouse.includes(element.id)){
       return true;
     }
     else{
       return false;
     }
-  }
-  let personInfo = "First Name: " + person.firstName + "\n";
-  personInfo += "Last Name: " + person.lastName + "\n";
-  familyInfo += "Parents: " + person.parents + "\n";
-  familyInfo += "Current Spouse: " + person.currentSpouse + "\n";
+  })
+
+  let familyInfo = "First Name: " + person.firstName + "\n";
+  familyInfo += "Last Name: " + person.lastName + "\n";
+  familyInfo += "Parents First Name: " + parentInfo[0].firstName + "\n";
+  familyInfo += "Parents Last Name: " + parentInfo[0].lastName + "\n";
+  familyInfo += "Current Spouse: " + spouseInfo.firstName + spouseInfo.lastName + "\n";
   familyInfo += "Siblings: " + person.siblings + "\n";
-  alert(personInfo, familyInfo)
+  alert(familyInfo)
 
 
 
