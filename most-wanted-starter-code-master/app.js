@@ -127,8 +127,9 @@ function searchByTrait(people){
 
 function refinedSearch(people){
   if (people.length(1)){
-    break;
-  }  else{
+  return;
+  }  
+  else{
       searchByTrait(people);
 }}
 
