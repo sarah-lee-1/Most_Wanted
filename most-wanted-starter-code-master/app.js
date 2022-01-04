@@ -253,7 +253,7 @@ function displayPerson(person){
 function displayFamily(person, people){
 
   let parentInfo = people.filter(function(element){
-    if(person.parents.includes(element.id)){
+    if (person.parents.includes(element.id)){
       return true;
     }
     else{
@@ -262,7 +262,7 @@ function displayFamily(person, people){
   })
 
   let spouseInfo = people.filter(function(element){
-    if((person.currentSpouse != null) && person.currentSpouse.includes(element.id)){
+    if (person.currentSpouse === element.id){
       return true;
     }
     else{
@@ -270,40 +270,32 @@ function displayFamily(person, people){
     }
   })
 
+  let siblingInfo = people.filter(function(element){
+    if ((person.parents[0] === element.parents[0] || person.parents[0] === element.parents[1]) && person.id !== element.id) {
+      return true;
+    }
+    else {
+      return false;
+    }
+  })
+   
+ 
+
   let familyInfo = "First Name: " + person.firstName + "\n";
   familyInfo += "Last Name: " + person.lastName + "\n";
-  familyInfo += "Parents First Name: " + parentInfo[0].firstName + "\n";
-  familyInfo += "Parents Last Name: " + parentInfo[0].lastName + "\n";
-  familyInfo += "Current Spouse: " + spouseInfo.firstName + spouseInfo.lastName + "\n";
-  familyInfo += "Siblings: " + person.siblings + "\n";
+  for (let i = 0; i < parentInfo.length; i++){
+    familyInfo += "Parents First Name: " + parentInfo[i].firstName + "\n";
+    familyInfo += "Parents Last Name: " + parentInfo[i].lastName + "\n";
+  }
+  familyInfo += "Current Spouse First Name: " + spouseInfo[0].firstName + "\n";
+  familyInfo += "Current Spouse Last Name: " + spouseInfo[0].lastName + "\n";
+  for(let i = 0; i < siblingInfo.length; i++){
+  familyInfo += "Siblings First Name: " + siblingInfo[i].firstName + "\n";
+  familyInfo += "Siblings Last Name: " + siblingInfo[i].lastName + "\n";
+}
+  
+  
   alert(familyInfo)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
