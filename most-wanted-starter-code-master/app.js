@@ -295,49 +295,25 @@ function displayFamily(person, people){
 }
 
 function displayDescendants(person, people){
- 
-    
-    // let Descendants = 
+  
+  let descendantInfo = people.filter(function(element){
+    if (person.id === element.parents[0] || person.id === element.parents[1]){
+      return true;
+    }
+    else{
+      return false
+    }
+  })
 
-    let descendant = people.filter(function(potentialDescendant){
-     for (let i = 0; i < potentialDescendant.parents.length; i++) {
-       if (person.parents.includes(potentialDescendant.parents[i])){
-         return true;
-       }
-       else{
-         return false;
-       }
-     }
-    })
-    
-
-    return descendant;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  let desDisplayInfo = "First Name: " + person.firstName + "\n";
+  desDisplayInfo += "Last Name: " + person.lastName + "\n";
+  for (let i = 0; i < descendantInfo.length; i++){
+    desDisplayInfo += "Descendant First Name: " + descendantInfo[i].firstName + "\n";
+    desDisplayInfo += "Descendant Last Name: " + descendantInfo[i].lastName + "\n";
 }
+  alert(desDisplayInfo) 
+}
+
 
 //#endregion
 
