@@ -279,8 +279,6 @@ function displayFamily(person, people){
     }
   })
    
- 
-
   let familyInfo = "First Name: " + person.firstName + "\n";
   familyInfo += "Last Name: " + person.lastName + "\n";
   for (let i = 0; i < parentInfo.length; i++){
@@ -293,12 +291,7 @@ function displayFamily(person, people){
   familyInfo += "Siblings First Name: " + siblingInfo[i].firstName + "\n";
   familyInfo += "Siblings Last Name: " + siblingInfo[i].lastName + "\n";
 }
-  
-  
   alert(familyInfo)
-
-
-
 }
 
 function displayDescendants(person, people){
